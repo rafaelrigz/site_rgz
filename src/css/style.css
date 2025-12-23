@@ -1,0 +1,563 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@import url("../css/variables.css");
+
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+}
+
+body {
+  background-image: url("../img/Background-Img.png"); /* ajuste o caminho */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* =========================
+   CONTAINER GLOBAL (1440px)
+========================= */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 120px;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 72px;
+}
+
+header .navbar .logo {
+  width: 150px;
+  height: auto;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  background-color: transparent;
+  transition: background-color 0.25s ease, color 0.25s ease,
+    transform 0.05s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-outlined {
+  border: 1px solid var(--color-detail-1);
+  border-radius: 50px;
+  color: var(--color-primary-0);
+}
+
+.btn-outlined:hover {
+  background-color: var(--color-detail-1);
+  color: var(--color-primary-1);
+}
+
+.btn-default {
+  background-color: var(--color-detail-1);
+  border-radius: 10px;
+  color: var(--color-primary-1);
+  font-size: 1.1rem;
+  padding: 12px 45px;
+}
+
+.btn-default:hover {
+  background-color: var(--color-detail-2);
+}
+
+.btn-ascend {
+  background-color: var(--color-detail-1);
+  border-radius: 10px;
+  color: var(--color-primary-1);
+  font-size: 1.1rem;
+  padding: 12px 45px;
+}
+
+.btn-ascend:hover {
+  background-color: var(--color-detail-2);
+}
+
+.ascend-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px; /* ajuste se quiser mais respiro */
+  align-items: center;
+}
+
+/* =========================
+   HERO / HOME (LAYERED)
+========================= */
+#home {
+  position: relative;
+  overflow: hidden; /* evita scroll horizontal */
+  padding: 96px 0;
+  background-color: transparent;
+}
+
+.home-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 70vh;
+}
+
+/* =========================
+   HERO – TEXTO (FRONT LAYER)
+========================= */
+.home-content {
+  position: relative;
+  z-index: 2;
+  max-width: 560px;
+}
+
+.home-tag {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-detail-1);
+}
+
+.home-title {
+  margin-top: 12px;
+  font-family: "Hanken Grotesk", sans-serif;
+  color: var(--color-secondary-1);
+  font-size: clamp(3rem, 5vw, 4.3rem);
+  line-height: 1.05;
+}
+
+.home-title .block {
+  display: block;
+}
+
+.home-title .highlight {
+  display: block;
+  color: var(--color-detail-1);
+}
+
+.home-title .highlight-line {
+  display: block;
+}
+
+.home-description {
+  margin-top: 16px;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--color-secondary-1);
+}
+
+.home-description .highlight-line {
+  display: block;
+  color: var(--color-detail-1);
+}
+
+.home-description .block {
+  display: block;
+}
+
+.home-action {
+  margin-top: 22px;
+}
+
+/* =========================
+   HERO – IMAGEM (BACK LAYER)
+========================= */
+.home-visual {
+  position: absolute;
+  right: 3%; /* menos afastada */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.home-visual img {
+  width: 620px; /* 👈 ponto ideal */
+  max-width: 60vh; /* trava para não explodir em telas altas */
+  height: auto;
+  opacity: 0.9;
+}
+
+/* =========================
+   SECTION: STAGNATION
+========================= */
+#stagnation {
+  padding: 80px 0;
+  background-color: var(--color-background-2);
+}
+
+/* Cabeçalho padrão de seção */
+.section-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 40px auto;
+}
+
+.section-title {
+  font-family: "Hanken Grotesk", sans-serif;
+  color: var(--color-secondary-1);
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  margin-top: 12px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: var(--color-secondary-1);
+  opacity: 0.85;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+/* Grid dos 3 erros */
+.stagnation-grid {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Card */
+.stagnation-card {
+  flex: 1;
+  max-width: 360px;
+  padding: 24px 22px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--color-detail-1); /* ajusta se quiser mais discreto */
+  backdrop-filter: blur(8px);
+}
+
+.stagnation-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 60, 60, 0.14);
+  border: 1px solid rgba(255, 60, 60, 0.35);
+  color: rgba(255, 110, 110, 0.95);
+
+  font-size: 1.25rem;
+  font-weight: 900;
+  margin-bottom: 14px;
+}
+
+.stagnation-card-title {
+  font-family: "Hanken Grotesk", sans-serif;
+  color: var(--color-secondary-1);
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.stagnation-card-text {
+  margin-top: 10px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: var(--color-secondary-1);
+  opacity: 0.85;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+/* =========================
+   SECTION: ASCEND
+========================= */
+#ascend {
+  padding: 80px 0;
+}
+
+.section-title span {
+  color: var(--color-detail-1);
+}
+
+.section-subtitle span {
+  display: block;
+}
+
+/* Grid dos 6 pilares */
+.ascend-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  justify-content: center;
+  align-items: stretch;
+  margin-bottom: 65px;
+}
+
+/* Card */
+.ascend-card {
+  flex: 1;
+  max-width: 360px;
+  padding: 24px 22px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--color-detail-1); /* ajusta se quiser mais discreto */
+  backdrop-filter: blur(8px);
+}
+
+.ascend-card-title {
+  font-family: "Hanken Grotesk", sans-serif;
+  color: var(--color-detail-1);
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.ascend-card-text {
+  margin-top: 10px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: var(--color-secondary-1);
+  opacity: 0.85;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.ascend-card-center {
+  background-color: var(--color-background-3);
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+/* =========================
+   SECTION: MANIFEST
+========================= */
+#manifest {
+  position: relative;
+  padding: 80px 0;
+  overflow: visible;
+  text-align: center;
+}
+
+#manifest::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 1100px;
+  height: 300px;
+
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 200, 150, 0.55) 0%,
+    rgba(0, 200, 150, 0.30) 35%,
+    rgba(0, 200, 150, 0.12) 55%,
+    rgba(0, 200, 150, 0.00) 75%
+  );
+
+  filter: blur(110px);
+  opacity: 0.85;
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+#manifest .container {
+  position: relative;
+  z-index: 1;
+}
+
+.manifest-text {
+  max-width: 920px;
+  margin: 0 auto;
+
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  line-height: 1.3;
+  color: var(--color-secondary-1);
+}
+
+.manifest-text span {
+  color: var(--color-detail-1);
+  font-weight: 700;
+}
+
+.manifest-text strong {
+  position: relative;
+  display: inline-block;
+}
+
+.manifest-text strong::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* distância da linha */
+  width: 100%;
+  height: 3px; /* espessura */
+  background-color: var(--color-detail-1); /* cor da linha */
+  border-radius: 4px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  padding: 16px 0;
+}
+
+footer .txtfooter {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1rem;
+  color: var(--color-secondary-1);
+  text-align: center;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 1280px) {
+  .container {
+    padding: 0 64px;
+  }
+
+  .home-visual img {
+    width: 760px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 40px;
+  }
+
+  #home {
+    padding: 72px 0;
+  }
+
+  .home-wrapper {
+    min-height: auto;
+  }
+
+  /* imagem volta para o fluxo */
+  .home-visual {
+    position: relative;
+    right: 0;
+    top: auto;
+    transform: none;
+    margin-top: 32px;
+    pointer-events: auto;
+  }
+
+  .home-visual img {
+    width: 100%;
+    max-width: 520px;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+
+  .home-title {
+    font-size: clamp(2.4rem, 7vw, 3.2rem);
+  }
+
+  .home-description {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .home-title {
+    font-size: 2.2rem;
+  }
+
+  .home-description {
+    font-size: 1rem;
+  }
+
+  .btn-default {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  #stagnation {
+    padding: 72px 0;
+  }
+
+  .stagnation-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stagnation-card {
+    max-width: 520px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .ascend-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .ascend-grid {
+    grid-template-columns: 1fr;
+  }
+}
