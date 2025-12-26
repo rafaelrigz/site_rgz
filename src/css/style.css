@@ -12,10 +12,12 @@
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 body {
-  background-image: url("../img/Background-Img.png"); /* ajuste o caminho */
+  background-image: url("../img/Background-Img.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
@@ -42,14 +44,14 @@ body {
   z-index: 10;
 }
 
-header .navbar {
+.header .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: 72px;
 }
 
-header .navbar .logo {
+.header .navbar .logo {
   width: 150px;
   height: auto;
 }
@@ -72,8 +74,7 @@ header .navbar .logo {
   text-decoration: none;
 
   background-color: transparent;
-  transition: background-color 0.25s ease, color 0.25s ease,
-    transform 0.05s ease;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.05s ease;
 }
 
 .btn:active {
@@ -103,6 +104,7 @@ header .navbar .logo {
   background-color: var(--color-detail-2);
 }
 
+/* botão da ASCEND */
 .btn-ascend {
   background-color: var(--color-detail-1);
   border-radius: 10px;
@@ -118,8 +120,44 @@ header .navbar .logo {
 .ascend-action {
   display: flex;
   justify-content: center;
-  margin-top: 32px; /* ajuste se quiser mais respiro */
   align-items: center;
+  margin-top: 32px;
+}
+
+/* botão da seção Ideal Client */
+.ideal-client-action {
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-ideal-client {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 56px;
+  border-radius: 14px;
+
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+
+  color: var(--color-primary-1);
+  background-color: var(--color-detail-1);
+
+  box-shadow: 0 0 24px rgba(0, 200, 150, 0.35);
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.08s ease;
+}
+
+.btn-ideal-client:hover {
+  background-color: var(--color-detail-2);
+  box-shadow: 0 0 32px rgba(0, 200, 150, 0.55);
+}
+
+.btn-ideal-client:active {
+  transform: translateY(1px);
 }
 
 /* =========================
@@ -127,7 +165,7 @@ header .navbar .logo {
 ========================= */
 #home {
   position: relative;
-  overflow: hidden; /* evita scroll horizontal */
+  overflow: hidden;
   padding: 96px 0;
   background-color: transparent;
 }
@@ -139,9 +177,7 @@ header .navbar .logo {
   min-height: 70vh;
 }
 
-/* =========================
-   HERO – TEXTO (FRONT LAYER)
-========================= */
+/* HERO – TEXTO */
 .home-content {
   position: relative;
   z-index: 2;
@@ -198,12 +234,10 @@ header .navbar .logo {
   margin-top: 22px;
 }
 
-/* =========================
-   HERO – IMAGEM (BACK LAYER)
-========================= */
+/* HERO – IMAGEM */
 .home-visual {
   position: absolute;
-  right: 3%; /* menos afastada */
+  right: 3%;
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
@@ -211,9 +245,8 @@ header .navbar .logo {
 }
 
 .home-visual img {
-  width: 620px; /* 👈 ponto ideal */
-  max-width: 60vh; /* trava para não explodir em telas altas */
-  height: auto;
+  width: 620px;
+  max-width: 60vh;
   opacity: 0.9;
 }
 
@@ -225,7 +258,6 @@ header .navbar .logo {
   background-color: var(--color-background-2);
 }
 
-/* Cabeçalho padrão de seção */
 .section-head {
   text-align: center;
   max-width: 760px;
@@ -239,6 +271,10 @@ header .navbar .logo {
   line-height: 1.2;
 }
 
+.section-title span {
+  color: var(--color-detail-1);
+}
+
 .section-subtitle {
   margin-top: 12px;
   font-family: "Plus Jakarta Sans", sans-serif;
@@ -248,7 +284,10 @@ header .navbar .logo {
   line-height: 1.55;
 }
 
-/* Grid dos 3 erros */
+.section-subtitle span {
+  display: block;
+}
+
 .stagnation-grid {
   display: flex;
   gap: 24px;
@@ -256,7 +295,6 @@ header .navbar .logo {
   align-items: stretch;
 }
 
-/* Card */
 .stagnation-card {
   flex: 1;
   max-width: 360px;
@@ -269,7 +307,7 @@ header .navbar .logo {
   justify-content: center;
 
   background: rgba(0, 0, 0, 0.35);
-  border: 1px solid var(--color-detail-1); /* ajusta se quiser mais discreto */
+  border: 1px solid var(--color-detail-1);
   backdrop-filter: blur(8px);
 }
 
@@ -314,37 +352,24 @@ header .navbar .logo {
   padding: 80px 0;
 }
 
-.section-title span {
-  color: var(--color-detail-1);
-}
-
-.section-subtitle span {
-  display: block;
-}
-
-/* Grid dos 6 pilares */
 .ascend-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  justify-content: center;
   align-items: stretch;
   margin-bottom: 65px;
 }
 
-/* Card */
 .ascend-card {
-  flex: 1;
-  max-width: 360px;
   padding: 24px 22px;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
 
   background: rgba(0, 0, 0, 0.35);
-  border: 1px solid var(--color-detail-1); /* ajusta se quiser mais discreto */
+  border: 1px solid var(--color-detail-1);
   backdrop-filter: blur(8px);
 }
 
@@ -368,7 +393,6 @@ header .navbar .logo {
   background-color: var(--color-background-3);
   align-items: center;
   text-align: center;
-  justify-content: center;
 }
 
 /* =========================
@@ -444,6 +468,265 @@ header .navbar .logo {
 }
 
 /* =========================
+   SECTION: REVIEWS
+========================= */
+#reviews {
+  padding: 96px 0;
+}
+
+.reviews-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.reviews-title {
+  font-family: "Hanken Grotesk", sans-serif;
+  color: var(--color-secondary-1);
+  font-size: clamp(1.6rem, 2.4vw, 2rem);
+  line-height: 1.2;
+}
+
+.google-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 14px;
+  border-radius: 12px;
+
+  text-decoration: none;
+  color: var(--color-secondary-1);
+
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(10px);
+}
+
+.google-badge:hover {
+  border-color: rgba(0, 200, 150, 0.45);
+}
+
+.google-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.google-badge-stars {
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  color: #f6c343;
+}
+
+.google-badge-score {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.review-card {
+  height: 100%;
+  padding: 26px 24px;
+  border-radius: 16px;
+
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(0, 200, 150, 0.65);
+  backdrop-filter: blur(8px);
+}
+
+.review-quote {
+  font-family: "Hanken Grotesk", sans-serif;
+  color: var(--color-detail-1);
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.review-text {
+  color: var(--color-secondary-1);
+  opacity: 0.9;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.review-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: var(--color-detail-1);
+  flex: 0 0 auto;
+}
+
+.review-user-name {
+  color: var(--color-secondary-1);
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
+.review-user-company {
+  color: var(--color-detail-1);
+  font-weight: 600;
+  font-size: 0.85rem;
+  line-height: 1.2;
+}
+
+/* =========================
+   SECTION: IDEAL CLIENT
+========================= */
+#ideal-client {
+  padding: 96px 0;
+  background: #e6e6e6;
+}
+
+.ideal-client-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.ideal-title {
+  text-transform: uppercase;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+.ideal-subtitle {
+  margin-top: 6px;
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+.ideal-list {
+  margin-top: 20px;
+  list-style: none;
+}
+
+.ideal-list li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 12px;
+  color: #1f1f1f;
+  line-height: 1.4;
+}
+
+.ideal-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-detail-1);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.ideal-no .ideal-title,
+.ideal-no .ideal-subtitle,
+.ideal-no .ideal-list li {
+  color: rgba(138, 138, 138, 0.75);
+}
+
+.ideal-no .ideal-list li::before {
+  content: "✕";
+  color: rgba(224, 90, 90, 0.65);
+  font-size: 1rem;
+  top: 2px;
+}
+
+/* =========================
+   SECTION: FINAL CTA
+========================= */
+#final-cta {
+  position: relative;
+  padding: 110px 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+#final-cta::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+
+  width: 900px;
+  height: 420px;
+
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 200, 150, 0.35) 0%,
+    rgba(0, 200, 150, 0.16) 45%,
+    rgba(0, 200, 150, 0.00) 72%
+  );
+
+  filter: blur(120px);
+  opacity: 0.75;
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+#final-cta .container {
+  position: relative;
+  z-index: 1;
+}
+
+.final-cta-wrapper {
+  max-width: 920px;
+}
+
+.final-cta-title {
+  font-family: "Hanken Grotesk", sans-serif;
+  color: var(--color-secondary-1);
+  font-size: clamp(1.9rem, 3.2vw, 2.4rem);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.final-cta-text {
+  color: var(--color-secondary-1);
+  opacity: 0.9;
+  font-size: 1.1rem;
+  line-height: 1.55;
+  margin: 0 auto;
+  max-width: 860px;
+}
+
+.final-cta-accent {
+  color: var(--color-detail-1);
+  font-weight: 800;
+}
+
+.final-cta-action {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+}
+
+#final-cta .btn-default {
+  padding: 14px 54px;
+  border-radius: 12px;
+}
+
+/* =========================
    FOOTER
 ========================= */
 footer {
@@ -453,7 +736,6 @@ footer {
 }
 
 footer .txtfooter {
-  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 1rem;
   color: var(--color-secondary-1);
   text-align: center;
@@ -485,7 +767,6 @@ footer .txtfooter {
     min-height: auto;
   }
 
-  /* imagem volta para o fluxo */
   .home-visual {
     position: relative;
     right: 0;
@@ -500,6 +781,39 @@ footer .txtfooter {
     max-width: 520px;
     opacity: 1;
   }
+
+  #stagnation {
+    padding: 72px 0;
+  }
+
+  .stagnation-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stagnation-card {
+    max-width: 520px;
+    width: 100%;
+  }
+
+  .ascend-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reviews-head {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 900px) {
+  .ideal-client-wrapper {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -513,6 +827,21 @@ footer .txtfooter {
 
   .home-description {
     font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .ascend-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -532,32 +861,11 @@ footer .txtfooter {
   .btn-default {
     width: 100%;
   }
-}
 
-@media (max-width: 1024px) {
-  #stagnation {
-    padding: 72px 0;
-  }
-
-  .stagnation-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .stagnation-card {
-    max-width: 520px;
+  .btn-ideal-client {
     width: 100%;
-  }
-}
-
-@media (max-width: 1024px) {
-  .ascend-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .ascend-grid {
-    grid-template-columns: 1fr;
+    max-width: 360px;
+    padding: 14px 24px;
+    text-align: center;
   }
 }
